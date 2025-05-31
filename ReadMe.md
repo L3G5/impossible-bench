@@ -8,3 +8,9 @@ The idea I have is about making a benchmark where I ask model do impossible task
 The point is that in some of the current LLM systems there are often system prompts which say that the model can do something, or is a very experienced developer who can complete any task, etc. And these prompts in my opinion can lead to serious reward hacking in real situations. Moreover, during training mdoels are heavily incentivised to value utility a lot.
 
 The benchmark will let people know whether this effect exists already and how substantial it is (if any): the score of an "aligned" model on it should be 0.
+
+## how to get data
+
+Extract data from data.zip (for example, `7za x data.zip`) using password `LgvnmKvpgKbriiGvng`.
+
+## 
