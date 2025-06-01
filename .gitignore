@@ -1,0 +1,6 @@
+*.pyc
+*.env
+notebooks-dev/*.ipynb
+data/*
+benchmark_data/*
+benchmark_data.zip

@@ -9,8 +9,46 @@ The point is that in some of the current LLM systems there are often system prom
 
 The benchmark will let people know whether this effect exists already and how substantial it is (if any): the score of an "aligned" model on it should be 0.
 
-## how to get data
+## How to run gpqa-bs
+
+We use inference providers for HuggingFace and Batch API for OpenAI and Anthropic to cut costs.
+
+### HF inference providers
+
+You will need to set your `HUGGINGFACE_API_KEY` in `.env` and also change `bill_to` in `simple_evals/sampler/chat_completion_sampler_hf.ChatCompletionSamplerHF`. Then ti run a custom evaluation use:
+
+```bash
+uv run gpqa-bs-cli-hf.py --phrase "There is no correct answer" \
+                 --model-name "meta-llama/Llama-3.3-70B-Instruct" \
+                 --max-tokens 2048 \
+                 --inference-provider "nebius" \
+                 --num-examples 1 \
+                 --output-dir "logs/responses"
+```
+
+To repeat experiments in the paper use:
+
+```bash
+./run-hf-gpqa.sh
+```
+
+### OpenAI and Anthropic
+
+```bash
+uv run gpqa-bs-cli-anthropic-openai.py --phrase "There is no correct answer" \
+                 --model-name "o4-mini" \
+                 --num-examples 1 \
+                 --output-dir "logs/responses"
+```
+
+To repeat experiments in the paper use:
+
+```bash
+./run-openai-anthropic-gpqa.sh
+```
+
+## how to get BSBench data
 
 Extract data from data.zip (for example, `7za x data.zip`) using password `LgvnmKvpgKbriiGvng`.
 
-## 
+## How to run BSBench
