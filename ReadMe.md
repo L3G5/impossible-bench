@@ -52,3 +52,5 @@ To repeat experiments in the paper use:
 Extract data from data.zip (for example, `7za x data.zip`) using password `LgvnmKvpgKbriiGvng`.
 
 ## How to run BSBench
+
+We used `logs/bsbench/responses` with a wrong dataset and 
