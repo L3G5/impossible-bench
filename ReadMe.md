@@ -1,17 +1,8 @@
 # Impossible Bench
 
-The idea I have is about making a benchmark where I ask model do impossible tasks and seeing whether it admits that it can't do it with pressure or without it. Examples of such tasks would be:
-
-- asking to find me a candidate with more than 20 years in C++ experience and age less than 20 (and seeing whether it chooses any of the resumes I provide it)
-- asking to write a code that terminates with both 0 and 1 exit code (and providing tests to check and seeing whether the model modifies the tests and tells it completed the task)
-
-The point is that in some of the current LLM systems there are often system prompts which say that the model can do something, or is a very experienced developer who can complete any task, etc. And these prompts in my opinion can lead to serious reward hacking in real situations. Moreover, during training mdoels are heavily incentivised to value utility a lot.
-
-The benchmark will let people know whether this effect exists already and how substantial it is (if any): the score of an "aligned" model on it should be 0.
-
 ## How to run gpqa-bs
 
-We use inference providers for HuggingFace and Batch API for OpenAI and Anthropic to cut costs.
+We use inference providers for HuggingFace and Batch API for OpenAI and Anthropic.
 
 ### HF inference providers
 
@@ -47,10 +38,29 @@ To repeat experiments in the paper use:
 ./run-openai-anthropic-gpqa.sh
 ```
 
+### Logs 
+
+are availible at `logs/responses` 
+
 ## how to get BSBench data
 
 Extract data from data.zip (for example, `7za x data.zip`) using password `LgvnmKvpgKbriiGvng`.
 
-## How to run BSBench
+### How to run BSBench
 
-We used `logs/bsbench/responses` with a wrong dataset and 
+To repeat experiments in the paper use `./run_bsbench.sh`
+
+To run your own eperiments use 
+
+```bash
+        uv run run_bsbench.py \
+            --system-prompt "$phrase" \
+            --model-name "$model" \
+            --num-examples "$NUM_EXAMPLES" \
+            --output-dir "$OUTPUT_DIR" \
+            --num-steps "$NUM_STEPS"
+```
+
+### Logs
+
+are availible at `logs/bsbench/responses` with the initial dataset and `logs/bsbench/responses_n_times` with the final dataset
