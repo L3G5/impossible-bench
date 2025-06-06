@@ -1,5 +1,7 @@
 # Impossible Bench
 
+This is code accompanying paper [BSBench: will your LLM find the largest prime number?](https://arxiv.org/abs/2506.04535)
+
 ## How to run gpqa-bs
 
 We use inference providers for HuggingFace and Batch API for OpenAI and Anthropic.
