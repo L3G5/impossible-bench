@@ -4,3 +4,5 @@ notebooks-dev/*.ipynb
 data/*
 benchmark_data/*
 benchmark_data.zip
+!notebooks-dev/6-draw-results-gpqa-bs.ipynb
+!notebooks-dev/8-draw-results-bsbench.ipynb
