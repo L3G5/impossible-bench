@@ -65,4 +65,5 @@ To run your own eperiments use
 
 ### Logs
 
-are availible at `logs/bsbench/responses` with the initial dataset and `logs/bsbench/responses_n_times` with the final dataset
+are availible at `logs/bsbench/responses` for a single response settting (and intitla version of dataste)  and `logs/bsbench/responses_n_times` for the retrial setting (and a final dataset)
+
